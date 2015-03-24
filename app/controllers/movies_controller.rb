@@ -20,6 +20,8 @@ class MoviesController < ApplicationController
     flash.keep  
     redirect_to movies_path(:ratingFilter => params[:ratingFilter],:sort=>session[:sort], :ratings=>params[:ratings])
     else 
+      session[:sort]=params[:sort]
+      session[:ratings]=params[:ratings]
       
       if (params[:ratingFilter]!= "[]" and params[:ratingFilter]!=nil)
         @checked_ratings = params[:ratingFilter].scan(/[\w-]+/)
@@ -37,8 +39,6 @@ class MoviesController < ApplicationController
           session[:ratingFilter] = nil
         end
       end
-      session[:sort]=params[:sort]
-      session[:ratings]=params[:ratings]
       
       # In case argument/param is title
       if (params[:sort] == "title")
