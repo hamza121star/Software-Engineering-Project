@@ -15,21 +15,16 @@ class MoviesController < ApplicationController
      if (session[:sort]!=nil and params[:sort]==nil)
       #then put params wala sort equal to session wala sort
       params[:sort] = session[:sort]
-     end
-     
+     end     
     flash.keep  
     redirect_to movies_path(:ratingFilter => params[:ratingFilter],:sort=>session[:sort], :ratings=>params[:ratings])
     else 
       session[:sort]=params[:sort]
       session[:ratings]=params[:ratings]
-      
       if (params[:ratingFilter]!= "[]" and params[:ratingFilter]!=nil)
         @checked_ratings = params[:ratingFilter].scan(/[\w-]+/)
         session[:ratingFilter] = params[:ratingFilter]
-        #redirect_to movies_path(:ratingFilter=>session[:ratingFilter])
       else
-        #@checked_ratings = params[:ratings] ? params[:ratings].keys : []
-        #session[:ratingFilter] = params[:ratings] ? params[:ratings].keys.to_s : nil
         if @checked_ratings = params[:ratings] then @checked_ratings = params[:ratings].keys
         else
           @checked_ratings = []
