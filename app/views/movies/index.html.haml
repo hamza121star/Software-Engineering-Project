@@ -7,7 +7,7 @@
   - @all_ratings.each do |rating|
     = rating
     = check_box_tag "ratings[#{rating}]", rating, ((@checked_ratings.grep(/^#{rating}$/).length>0 ) || (@checked_ratings.length==0))
-  = hidden_field_tag "sort", "#{params[:sort]}" 
+  /= hidden_field_tag "sort", "#{params[:sort]}" 
   = submit_tag 'Refresh', :id => "ratings_submit"
   
   
