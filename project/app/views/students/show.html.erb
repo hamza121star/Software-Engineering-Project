@@ -1,0 +1,34 @@
+<h1>Hello <%= @student.name %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>You Personal Info:-</p>
+<p>
+  <b>Email:</b>
+  <%= @student.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @student.password %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @student.name %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @student.gender %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @student.dob %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %> |
+<%= link_to 'Logout', '/logout' %>
