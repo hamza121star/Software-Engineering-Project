@@ -4,6 +4,7 @@ Feature: User to login in to the system
   I want to login to the website
   So that I can access restricted areas
 
+<<<<<<< HEAD
 Background: Users have been added to the database
 
   Given the following users exist
@@ -16,6 +17,11 @@ Background: Users have been added to the database
   And I am on the Course Manager login page
 
 Scenario: User logs in successfully
+=======
+#add background here
+
+  Scenario: User logs in successfully
+>>>>>>> 5bf90e9bdc0b6cbf21aff31d7b4989150f9cc144
     Given I exist as a user
     And I am not logged in
     When I sign in with valid credentials

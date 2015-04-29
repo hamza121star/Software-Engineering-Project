@@ -1,0 +1,9 @@
+class Student < ActiveRecord::Base
+  attr_accessible :dob, :email, :gender, :name, :password
+<<<<<<< HEAD
+validates :email, presence:true
+validates :name, presence:true
+validates :password, length: {minimum:5}
+=======
+>>>>>>> 5bf90e9bdc0b6cbf21aff31d7b4989150f9cc144
+end
