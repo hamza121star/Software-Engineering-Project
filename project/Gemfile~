@@ -5,7 +5,7 @@ gem "therubyracer"
 gem "less-rails"
 gem "omniauth-facebook"
 gem "twitter-bootstrap-rails"
-gem "codeclimate-test-reporter", group: :test, require:nil
+gem "codeclimate-test-reporter", group: :test require:nil
 
 
 gem 'rails', '3.2.18'
