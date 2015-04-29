@@ -1,6 +1,15 @@
 Project::Application.routes.draw do
+  get "sessions/new"
+
+  resources :students
+
   resources :courses
   root :to => "courses#index"
+
+  get 'sign up' => 'students#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -9,7 +9,7 @@ Feature: User can sign up to the website
 	Scenario:
 		Given that I have to sign up as a student
 		And I am on the sign up page
-		Then And I enter my email address
+		Then I enter my email address
         And I enter a valid username
         And I enter a valid password
         And I re-enter the password for confirmation
