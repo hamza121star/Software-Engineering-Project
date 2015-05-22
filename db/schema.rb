@@ -11,15 +11,67 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131107031651) do
+ActiveRecord::Schema.define(:version => 20150514134303) do
 
-  create_table "movies", :force => true do |t|
+  create_table "courses", :force => true do |t|
     t.string   "title"
-    t.string   "rating"
-    t.text     "description"
-    t.datetime "release_date"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "discussions", :force => true do |t|
+    t.date     "Date"
+    t.datetime "Time"
+    t.string   "Name"
+    t.string   "Message"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "instructor1s", :force => true do |t|
+    t.string   "email"
+    t.string   "password"
+    t.date     "DoB"
+    t.string   "Full_Name"
+    t.string   "Your_Description"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "instructorcourses", :force => true do |t|
+    t.string   "instructoremail"
+    t.string   "coursecode"
+    t.string   "coursename"
+    t.string   "coursedescription"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "instructors", :force => true do |t|
+    t.date     "DoB"
+    t.string   "Full_Name"
+    t.string   "Your_Description"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "studentcourses", :force => true do |t|
+    t.string   "email"
+    t.string   "coursecode"
+    t.date     "date_of_joining"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "email"
+    t.string   "password"
+    t.string   "name"
+    t.string   "gender"
+    t.date     "dob"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

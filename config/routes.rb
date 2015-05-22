@@ -1,6 +1,42 @@
-Rottenpotatoes::Application.routes.draw do
-  resources :movies
-  root :to => redirect("/movies")
+Project::Application.routes.draw do
+  resources :studentcourses
+
+
+  resources :instructorcourses
+
+
+  resources :subjects
+
+
+  resources :instructor1s
+
+
+  resources :instructors
+
+
+  resources :discussions
+
+
+  get "sessions/new"
+
+  resources :students
+
+
+  resources :courses
+  root :to => "courses#index"
+
+get '/signup' => 'students#new'
+get 'login' => 'sessions#new'
+post 'login' => 'sessions#create'
+get 'logout' => 'sessions#destroy'
+get 'home' => 'sessions#home'
+
+get '/signupInstructor' => 'instructor1s#new'#done
+
+get 'loginInstructor' => 'sessions#newInstructor' #done
+post 'loginInstructor' => 'sessions#createInstructor' #done
+get 'logoutInstructor' => 'sessions#destroyInstructor'#not used
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

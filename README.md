@@ -1,2 +1,2 @@
-Course Management System - Software Project for course
-
+# Software-Engineering-Project
+Project for Software Engineering course
