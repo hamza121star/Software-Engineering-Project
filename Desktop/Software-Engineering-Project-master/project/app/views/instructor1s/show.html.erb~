@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Logged in: <%= @s %></h2>
+
+<h1>My Info</h1>
+<p>
+  <b>Email:</b>
+  <%= @instructor1.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @instructor1.password %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @instructor1.DoB %>
+</p>
+
+<p>
+  <b>Full name:</b>
+  <%= @instructor1.Full_Name %>
+</p>
+
+<p>
+  <b>Your description:</b>
+  <%= @instructor1.Your_Description %>
+</p>
+
+<%= link_to 'Edit', edit_instructor1_path(@instructor1) %> |
+<%= link_to 'Back', instructor1s_path %>
+
+<h1>My Courses</h1>
+
+<table>
+  <tr>
+    <th>Instructoremail</th>
+    <th>Coursecode</th>
+    <th>Coursename</th>
+    <th>Coursedescription</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @instructorcourses.each do |instructorcourse| %>
+  <tr>
+    <td><%= instructorcourse.instructoremail %></td>
+    <td><%= instructorcourse.coursecode %></td>
+    <td><%= instructorcourse.coursename %></td>
+    <td><%= instructorcourse.coursedescription %></td>
+    <td><%= link_to 'Show', instructorcourse %></td>
+    <td><%= link_to 'Edit', edit_instructorcourse_path(instructorcourse) %></td>
+    <td><%= link_to 'Destroy', instructorcourse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New Instructorcourse', new_instructorcourse_path %>
+<br />
+
