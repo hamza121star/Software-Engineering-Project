@@ -1,0 +1,3 @@
+<%= link_to 'Login', '/login' %>
+<br>
+<%= link_to 'Sign-up', '/signup' %>

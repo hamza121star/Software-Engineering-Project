@@ -1,0 +1,30 @@
+<body style="background-color:#ECECEC">
+<h1>Instructor Panel: Course Listing</h1>
+
+<table border="2" style="width:100%;">
+  <tr>
+    <th style="text-align: center;">Instructor Email</th>
+    <th style="text-align: center;">Course code</th>
+    <th style="text-align: center;">Course Name</th>
+    <th style="text-align: center;">Course Description</th>
+  </tr>
+
+<% @instructorcourses.each do |instructorcourse| %>
+  <tr>
+    <td style="text-align: center;"><%= instructorcourse.instructoremail %></td>
+    <td style="text-align: center;"><%= instructorcourse.coursecode %></td>
+    <td style="text-align: center;"><%= instructorcourse.coursename %></td>
+    <td style="text-align: center;"><%= instructorcourse.coursedescription %></td>
+    <td style="text-align: center;"><%= link_to 'Show', instructorcourse %></td>
+    <td style="text-align: center;"><%= link_to 'Edit', edit_instructorcourse_path(instructorcourse) %></td>
+    <td style="text-align: center;"><%= link_to 'Destroy', instructorcourse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("/images/instrcourse.png", width:"175"), new_instructorcourse_path %>
+<br />
+<p></p>
+</body>

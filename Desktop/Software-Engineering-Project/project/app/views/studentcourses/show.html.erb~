@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @studentcourse.email %>
+</p>
+
+<p>
+  <b>Coursecode:</b>
+  <%= @studentcourse.coursecode %>
+</p>
+
+<p>
+  <b>Date of joining:</b>
+  <%= @studentcourse.date_of_joining %>
+</p>
+
+
+<%= link_to 'Go back to my profile', '/students/'+'@idd' %>

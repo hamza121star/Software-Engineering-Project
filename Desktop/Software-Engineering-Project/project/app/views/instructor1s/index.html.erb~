@@ -1,0 +1,29 @@
+<h1>List of all instructors</h1>
+
+<table border="2" style="width:100%";>
+  <tr>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Date of Birth</th>
+    <th>Full name</th>
+    <th>Your description</th>
+
+  </tr>
+
+<% @instructor1s.each do |instructor1| %>
+  <tr>
+    <td><%= instructor1.email %></td>
+    <td><%= instructor1.password %></td>
+    <td><%= instructor1.DoB %></td>
+    <td><%= instructor1.Full_Name %></td>
+    <td><%= instructor1.Your_Description %></td>
+    <td><%= link_to 'Show', instructor1 %></td>
+    <td><%= link_to 'Edit', edit_instructor1_path(instructor1) %></td>
+    <td><%= link_to 'Destroy', instructor1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to image_tag("/images/addInstr.png", width:"150"), new_instructor1_path %>
